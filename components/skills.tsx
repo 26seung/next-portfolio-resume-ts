@@ -5,7 +5,7 @@ import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 
 const Skills = () => {
-  const { ref } = useSectionInView("Skills");
+  const { ref } = useSectionInView("Skills", 1);
   return (
     <section
       id="skills"
@@ -18,13 +18,6 @@ const Skills = () => {
           <div
             className="bg-white border border-black/20 rounded-xl px-5 py-3 focus:scale-125 hover:scale-125 active:scale-125 transition cursor-pointer dark:bg-white/10 dark:text-white/80"
             key={index}
-            // variants={fadeInAnimationVariants}
-            // initial="initial"
-            // whileInView="animate"
-            // viewport={{
-            //   once: true,
-            // }}
-            // custom={index}
           >
             {skill}
           </div>
