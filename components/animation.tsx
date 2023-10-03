@@ -5,7 +5,7 @@ import animationJson from "@/public/animation.json";
 
 const Animation = () => {
   return (
-    <div className="flex justify-end pl-52 ">
+    <div className="flex justify-end pl-72 ">
       <Lottie
         loop
         animationData={animationJson}
