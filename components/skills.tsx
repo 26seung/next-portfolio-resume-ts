@@ -13,6 +13,7 @@ const Skills = () => {
       className="max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
     >
       <SectionHeading>My skills</SectionHeading>
+      {/* 사용스킬 map */}
       <div className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 mb-32">
         {dataSkills.map((skill, index) => (
           <div

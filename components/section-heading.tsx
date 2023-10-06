@@ -1,3 +1,4 @@
+/** Section별 구분 제목 설정 */
 import React from "react";
 
 type SectionHeadingProps = {
