@@ -3,7 +3,6 @@ import Contact from "@/components/contact";
 import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
-// import Projects from "./page/projects";
 
 export default function Home() {
   return (
