@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
       // 자격증명 (ERROR : Upstream image response failed for 403)
       // credentials: "same-origin" as RequestCredentials,
       // ISR 사용
-      next: { revalidate: 60 },
+      // next: { revalidate: 60 },
     };
 
     // 노션 API 통신
