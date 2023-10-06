@@ -14,8 +14,9 @@ export async function POST(req: NextRequest) {
         "content-type": "application/json",
         Authorization: `Bearer ${notionSecret}`,
       },
-      //   사용: 빌드 시점 렌더링
+      // getStaticProps 사용: 빌드 시점 렌더링
       cache: "force-cache" as RequestCache,
+      // cache: "no-store" as RequestCache,
       // 자격증명 (ERROR : Upstream image response failed for 403)
       // credentials: "same-origin" as RequestCredentials,
       // ISR 사용
