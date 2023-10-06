@@ -1,4 +1,4 @@
-export type ProjectType = {
+export type NotionAPI = {
   properties: {
     name: {
       title: [{ plain_text: string }];
@@ -22,4 +22,14 @@ export type ProjectType = {
     };
   };
   public_url: string;
+};
+
+export type ProjectData = {
+  title: string;
+  github: string;
+  description: string;
+  imgSrc: string;
+  type: string;
+  tags: { id: string; name: string }[];
+  moreUrl: string;
 };
