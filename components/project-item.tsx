@@ -43,6 +43,7 @@ const ProjectItem = ({ project }: OwnProps) => {
             quality={100}
             width={500}
             height={500}
+            priority
             className="absolute hidden sm:block top-7 -right-20 w-[28.25rem] rounded-t-lg shadow-2xl
             transition
             group-hover:scale-[1.04]
