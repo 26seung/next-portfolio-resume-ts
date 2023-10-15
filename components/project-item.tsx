@@ -20,11 +20,11 @@ const ProjectItem = ({ project }: OwnProps) => {
             {project.description}
           </p>
           {/* 개인프로젝트 */}
-          <div className="text-[0.3rem] text-center px-2 py-1 sm:mt-auto rounded-md hover:scale-110 bg-pink-200 dark:bg-pink-600 w-[4.5rem]">
+          <div className="text-[0.3rem] text-center px-2 py-1 sm:mt-auto rounded-md hover:scale-110 bg-pink-200 dark:bg-pink-600 w-20">
             {project.type}
           </div>
           {/* 사용스킬 */}
-          <div className="flex flex-wrap gap-1 mt-2">
+          <div className="flex flex-wrap gap-1 mt-3">
             {project.tags.map((tag) => (
               <div
                 className="bg-black/[0.7] px-3 py-1 text-[0.2rem] uppercase tracking-tight hover:scale-110 text-white rounded-full dark:text-white/70"
