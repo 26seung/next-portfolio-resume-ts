@@ -12,22 +12,22 @@ const ProjectItem = ({ project }: OwnProps) => {
   return (
     <div className="group mb-3 sm:mb-8 last:mb-0">
       <section className="bg-gray-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-2 relative sm:h-[22rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-2 px-5 sm:pl-10 sm:pr-0 sm:pt-8 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[22rem]">
+        <div className="pt-4 pb-3 px-5 sm:pl-10 sm:pr-0 sm:pt-8 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[22rem]">
           {/* 제목 */}
-          <h1 className="text-xl font-semibold">{project.title}</h1>
+          <h1 className="text-[1.3rem] font-extrabold">{project.title}</h1>
           {/* 내용 */}
-          <p className="mt-4 text-sm leading-relaxed text-gray-700 dark:text-white/70">
+          <p className="mt-5 pl-1 text-sm leading-relaxed text-gray-700 dark:text-white/70">
             {project.description}
           </p>
           {/* 개인프로젝트 */}
-          <div className="text-[0.3rem] text-center px-2 py-1 sm:mt-auto rounded-md hover:scale-110 bg-pink-200 dark:bg-pink-600 w-20">
+          <div className="text-[0.7rem] text-center px-2 py-1 sm:mt-auto rounded-md hover:scale-110 bg-pink-200 dark:bg-pink-600 w-20">
             {project.type}
           </div>
           {/* 사용스킬 */}
           <div className="flex flex-wrap gap-1 mt-3">
             {project.tags.map((tag) => (
               <div
-                className="bg-black/[0.7] px-3 py-1 text-[0.2rem] uppercase tracking-tight hover:scale-110 text-white rounded-full dark:text-white/70"
+                className="bg-black/[0.7] px-3 py-1.5 text-[0.6rem] uppercase tracking-tight hover:scale-110 text-white rounded-full dark:text-white/70"
                 key={tag.id}
               >
                 {tag.name}
