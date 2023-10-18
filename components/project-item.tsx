@@ -20,7 +20,7 @@ const ProjectItem = ({ project }: OwnProps) => {
             {project.description}
           </p>
           {/* 개인프로젝트 */}
-          <div className="text-[0.7rem] text-center px-2 py-1 sm:mt-auto rounded-md hover:scale-110 bg-pink-200 dark:bg-pink-600 w-20">
+          <div className="text-[0.7rem] text-center px-2 py-1 sm:mt-auto rounded-md hover:scale-110 bg-pink-200 dark:bg-pink-600 w-[5.3rem]">
             {project.type}
           </div>
           {/* 사용스킬 */}
