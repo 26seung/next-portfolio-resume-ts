@@ -4,6 +4,9 @@ import { NextRequest, NextResponse } from "next/server";
 const notionSecret = process.env.NOTION_TOKEN;
 const notionDatabaseId = process.env.NOTION_DATABASE_ID;
 
+// Web API (Default : node.js) 페이지 요청시에 서버에서 스트리밍 되어 클라이언트에게 전송하여 초기 로드속도 향상.
+export const runtime = "edge";
+
 export async function POST(req: NextRequest) {
   try {
     const options = {
@@ -16,9 +19,6 @@ export async function POST(req: NextRequest) {
       },
       // getStaticProps 사용: 빌드 시점 렌더링
       // cache: "force-cache" as RequestCache,
-      // cache: "no-store" as RequestCache,
-      // 자격증명 (ERROR : Upstream image response failed for 403)
-      // credentials: "same-origin" as RequestCredentials,
       // ISR 사용
       // next: { revalidate: 60 },
     };
