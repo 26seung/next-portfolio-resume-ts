@@ -40,9 +40,13 @@ const ProjectItem = ({ project }: OwnProps) => {
           <Image
             src={project.imgSrc}
             alt="Project Image"
-            quality={100}
+            // quality={100}
+            sizes="250px"
             width={500}
             height={500}
+            placeholder="blur"
+            blurDataURL={project.imgSrc}
+            // blurDataURL={"/logo.png"}
             priority
             className="absolute hidden sm:block top-7 -right-20 w-[28.25rem] rounded-t-lg shadow-2xl
             transition

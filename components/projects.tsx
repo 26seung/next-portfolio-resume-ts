@@ -1,34 +1,26 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import SectionHeading from "./section-heading";
 import ProjectItem from "./project-item";
 import { useSectionInView } from "@/lib/hooks";
 import axios from "axios";
 import { ProjectData } from "@/lib/types";
+import { useQuery } from "@tanstack/react-query";
 
 // Notion API data
-async function notionData() {
+const fetchNotions = async () => {
   const response = await axios.post("/api/project");
-  // 가공된 데이터를 받기
-  const notionData = response.data;
-  return notionData;
-}
-
+  return response.data;
+};
 const Projects = () => {
   //  프로젝트 길이, threshold 추가
   const { ref } = useSectionInView("Projects", 0.5);
-  const [projectData, setProjectData] = useState<ProjectData[]>([]);
-  const [countProject, setCountProject] = useState<string>();
 
-  useEffect(() => {
-    if (projectData.length === 0) {
-      notionData().then((res) => {
-        setProjectData(res);
-        setCountProject(res.length);
-      });
-    }
-  }, [projectData]);
+  // react-query 사용하여 data 가져오기
+  const { data } = useQuery({
+    queryKey: ["notionData"],
+    queryFn: fetchNotions,
+  });
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
@@ -42,7 +34,7 @@ const Projects = () => {
           <h1 className="sm:text-xl text-xl font-medium title-font text-gray-900 dark:text-gray-50">
             Current Number of Projects :
             <span className="pl-2 text-2xl text-indigo-400 dark:text-amber-300">
-              {countProject}
+              {data?.length}
             </span>
           </h1>
         </div>
@@ -51,7 +43,7 @@ const Projects = () => {
         </div>
         <div></div>
         {/* 작업한 프로젝트 map */}
-        {projectData.map((data, index) => (
+        {data?.map((data: ProjectData, index: number) => (
           <ProjectItem key={index} project={data} />
         ))}
       </div>
