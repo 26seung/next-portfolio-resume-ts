@@ -47,9 +47,9 @@ const Intro = () => {
         </div>
 
         {/* //  intro link (notion, git) */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 px-40 text-lg mt-7 font-medium">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 px-40 text-lg mt-7 font-medium ">
           <a
-            className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110 transition cursor-pointer borderBlack dark:bg-white/10"
+            className="group border border-gray-400 bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110 transition cursor-pointer borderBlack dark:bg-white/10"
             href="/resume.pdf"
             download
           >
@@ -58,14 +58,14 @@ const Intro = () => {
           </a>
 
           <a
-            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-xl rounded-full hover:scale-[1.15] hover:text-gray-950 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+            className="bg-white border border-gray-400 p-4 text-gray-700 flex items-center gap-2 text-xl rounded-full hover:scale-[1.15] hover:text-gray-950 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
             href="https://ebony-statistic-df3.notion.site/Junior-Backend-LeeYuSeung-343f30692dc542ad82a103fffe42cb81"
             target="_blank"
           >
             <RiNotionFill />
           </a>
           <a
-            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-xl rounded-full hover:scale-[1.15] hover:text-gray-950 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+            className="bg-white border border-gray-400 p-4 text-gray-700 flex items-center gap-2 text-xl rounded-full hover:scale-[1.15] hover:text-gray-950 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
             href="https://github.com/26seung"
             target="_blank"
           >

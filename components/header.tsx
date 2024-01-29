@@ -28,7 +28,7 @@ const Header = () => {
                     className={cn(
                       "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 dark:text-gray-500 dark:hover:text-gray-300",
                       activeSection === data.label &&
-                        "text-gray-950 dark:text-gray-200"
+                        "text-gray-700 dark:text-white"
                     )}
                     onClick={() => {
                       setActiveSection(data.label);
@@ -37,7 +37,7 @@ const Header = () => {
                   >
                     {data.label}
                     {data.label === activeSection && (
-                      <span className="bg-gray-200 rounded-3xl absolute inset-0 -z-10 dark:bg-gray-800"></span>
+                      <span className="bg-yellow-200 rounded-3xl absolute inset-0 -z-10 dark:bg-gray-700"></span>
                     )}
                   </Link>
                 </div>

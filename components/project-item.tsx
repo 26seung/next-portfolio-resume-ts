@@ -41,42 +41,42 @@ const ProjectItem = ({ project }: OwnProps) => {
             src={project.imgSrc}
             alt="Project Image"
             // quality={100}
-            sizes="250px"
+            sizes="350px"
             width={500}
             height={500}
             placeholder="blur"
             blurDataURL={project.imgSrc}
             // blurDataURL={"/logo.png"}
             priority
-            className="absolute hidden sm:block top-7 -right-20 w-[28.25rem] rounded-t-lg shadow-2xl
+            className="absolute hidden sm:block top-5 -right-20 w-[28.25rem] rounded-t-lg shadow-2xl
             transition
             group-hover:scale-[1.04]
-            group-hover:-translate-x-10
+            group-hover:-translate-x-5
             group-hover:translate-y-3
             group-hover:-rotate-2
 
-            group-even:group-hover:translate-x-10
-            group-even:group-hover:translate-y-3
+            group-even:group-hover:translate-x-5
+            group-even:group-hover:translate-y-4
             group-even:group-hover:rotate-2
 
             group-even:right-[initial] group-even:-left-20"
           />
           {/* notion & git. Link */}
-          <div className="flex absolute top-[18.8rem] gap-2 right-10 group-even:right-[initial] group-even:left-10">
+          <div className="flex absolute top-[18.8rem] gap-2.5 right-10 group-even:right-[initial] group-even:left-10">
             <a
-              className="text-base bg-white px-3 py-3 items-center flex gap-1 rounded-full focus:scale-110 hover:scale-110 transition cursor-pointer borderBlack dark:bg-white/20"
+              className="text-base border border-gray-400 bg-white px-3 py-3 items-center flex gap-1 rounded-full focus:scale-110 hover:scale-110 transition cursor-pointer borderBlack dark:bg-white/25"
               href={project.moreUrl}
               target="_blank"
             >
-              {/* notion */}
+              {/* notion icon */}
               <RiNotionFill className="opacity-60" />
             </a>
             <a
-              className="text-base bg-white px-3 py-3 items-center flex gap-1 rounded-full focus:scale-110 hover:scale-110 transition cursor-pointer borderBlack dark:bg-white/20"
+              className="text-base border border-gray-400 bg-white px-3 py-3 items-center flex gap-1 rounded-full focus:scale-110 hover:scale-110 transition cursor-pointer borderBlack dark:bg-white/25"
               href={project.github}
               target="_blank"
             >
-              {/* git */}
+              {/* git icon */}
               <BsGithub className="opacity-60" />
             </a>
           </div>
