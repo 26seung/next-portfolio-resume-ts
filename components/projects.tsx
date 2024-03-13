@@ -9,12 +9,13 @@ import { useQuery } from "@tanstack/react-query";
 
 // Notion API data
 const fetchNotions = async () => {
-  const response = await axios.post("/api/project");
+  const response = await axios.post("/api/project", { caches: "force-cache" });
   return response.data;
 };
+
 const Projects = () => {
   //  프로젝트 길이, threshold 추가
-  const { ref } = useSectionInView("Projects", 0.5);
+  const { ref } = useSectionInView("Projects", 0.38);
 
   // react-query 사용하여 data 가져오기
   const { data } = useQuery({
