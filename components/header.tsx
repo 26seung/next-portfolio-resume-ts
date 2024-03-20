@@ -1,7 +1,7 @@
 "use client";
 import { dataHeader } from "@/lib/constants";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import { useActiveSectionContext } from "@/context/active-section-context";
 

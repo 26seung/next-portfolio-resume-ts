@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 
 // Notion API data
 const fetchNotions = async () => {
-  const response = await axios.post("/api/project", { caches: "force-cache" });
+  const response = await axios.post("/api/project");
   return response.data;
 };
 
