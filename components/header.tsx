@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
 const Header = () => {
-  // const [activeSection, setActiveSection] = useState("Home");
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 
@@ -28,7 +27,7 @@ const Header = () => {
                     className={cn(
                       "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 dark:text-gray-500 dark:hover:text-gray-300",
                       activeSection === data.label &&
-                        "text-gray-700 dark:text-white"
+                        "text-gray-700 dark:text-white font-bold"
                     )}
                     onClick={() => {
                       setActiveSection(data.label);

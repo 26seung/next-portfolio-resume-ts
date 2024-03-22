@@ -1,5 +1,6 @@
 import { ProjectData } from "@/lib/types";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { BsGithub } from "react-icons/bs";
 import { RiNotionFill } from "react-icons/ri";
@@ -9,6 +10,10 @@ interface OwnProps {
 }
 
 const ProjectItem = ({ project }: OwnProps) => {
+  const providers = [
+    { key: "notion", providerHref: project.moreUrl, Icon: RiNotionFill },
+    { key: "github", providerHref: project.github, Icon: BsGithub },
+  ];
   return (
     <div className="group mb-3 sm:mb-8 last:mb-0">
       <section className="bg-gray-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-2 relative sm:h-[22rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
@@ -36,7 +41,7 @@ const ProjectItem = ({ project }: OwnProps) => {
           </div>
         </div>
         {/* image */}
-        <div className="">
+        <div>
           <Image
             src={project.imgSrc}
             alt="Project Image"
@@ -62,23 +67,17 @@ const ProjectItem = ({ project }: OwnProps) => {
             group-even:right-[initial] group-even:-left-20"
           />
           {/* notion & git. Link */}
-          <div className="flex absolute top-[18.8rem] gap-2.5 right-10 group-even:right-[initial] group-even:left-10">
-            <a
-              className="text-base border border-gray-400 bg-white px-3 py-3 items-center flex gap-1 rounded-full focus:scale-110 hover:scale-110 transition cursor-pointer borderBlack dark:bg-white/25"
-              href={project.moreUrl}
-              target="_blank"
-            >
-              {/* notion icon */}
-              <RiNotionFill className="opacity-60" />
-            </a>
-            <a
-              className="text-base border border-gray-400 bg-white px-3 py-3 items-center flex gap-1 rounded-full focus:scale-110 hover:scale-110 transition cursor-pointer borderBlack dark:bg-white/25"
-              href={project.github}
-              target="_blank"
-            >
-              {/* git icon */}
-              <BsGithub className="opacity-60" />
-            </a>
+          <div className="flex absolute top-[18.8rem] gap-2.5 right-10 group-even:right-[initial] group-even:left-10 ">
+            {providers.map((provider) => (
+              <Link
+                key={provider.key}
+                href={provider.providerHref}
+                target="_blank"
+                className="text-base border border-gray-400 bg-black px-3 py-3 items-center flex gap-1 rounded-full hover:scale-125 transition cursor-pointer borderBlack group-hover:bg-white/25"
+              >
+                <provider.Icon className="opacity-60" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>
