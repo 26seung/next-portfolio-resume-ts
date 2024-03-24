@@ -7,7 +7,8 @@ export const ReactQueryProviders = ({ children }: React.PropsWithChildren) => {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 60 * 1000,
+        staleTime: 10 * 60 * 1000,
+        cacheTime: 15 * (60 * 1000),
       },
     },
   });

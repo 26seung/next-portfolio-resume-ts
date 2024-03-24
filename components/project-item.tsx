@@ -4,6 +4,8 @@ import Link from "next/link";
 import React from "react";
 import { BsGithub } from "react-icons/bs";
 import { RiNotionFill } from "react-icons/ri";
+import { PiArrowArcLeftFill, PiArrowArcRightFill } from "react-icons/pi";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 interface OwnProps {
   project: ProjectData;
@@ -46,6 +48,7 @@ const ProjectItem = ({ project }: OwnProps) => {
             src={project.imgSrc}
             alt="Project Image"
             // quality={100}
+
             sizes="350px"
             width={500}
             height={500}
@@ -73,11 +76,19 @@ const ProjectItem = ({ project }: OwnProps) => {
                 key={provider.key}
                 href={provider.providerHref}
                 target="_blank"
-                className="text-base border border-gray-400 bg-black px-3 py-3 items-center flex gap-1 rounded-full hover:scale-125 transition cursor-pointer borderBlack group-hover:bg-white/25"
+                as="style"
+                className="text-base border border-gray-400 dark:bg-black px-3 py-3 items-center flex gap-1 rounded-full hover:scale-125 transition cursor-pointer group-hover:bg-white/25"
               >
                 <provider.Icon className="opacity-60" />
               </Link>
             ))}
+          </div>
+          <div className="flex absolute top-[19.5rem] gap-1 right-[9.5rem] group-even:left-[9.5rem] group-even:right-[initial] ">
+            <div className="flex group-hover:opacity-100 opacity-0 gap-1.5 mt-0.5 text-current animate-wiggle">
+              <FaArrowLeft className="group-odd:hidden" />
+              <span className="text-xs font-light">자세히 보기</span>
+              <FaArrowRight className="group-even:hidden" />
+            </div>
           </div>
         </div>
       </section>
