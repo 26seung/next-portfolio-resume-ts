@@ -48,7 +48,6 @@ const ProjectItem = ({ project }: OwnProps) => {
             src={project.imgSrc}
             alt="Project Image"
             // quality={100}
-
             sizes="350px"
             width={500}
             height={500}
@@ -76,8 +75,7 @@ const ProjectItem = ({ project }: OwnProps) => {
                 key={provider.key}
                 href={provider.providerHref}
                 target="_blank"
-                as="style"
-                className="text-base border border-gray-400 dark:bg-black px-3 py-3 items-center flex gap-1 rounded-full hover:scale-125 transition cursor-pointer group-hover:bg-white/25"
+                className="text-base border border-gray-400 dark:bg-black px-3 py-3 items-center flex gap-1 rounded-full hover:scale-125 transition cursor-pointer group-hover:dark:bg-white/25 group-hover:bg-yellow-100"
               >
                 <provider.Icon className="opacity-60" />
               </Link>
